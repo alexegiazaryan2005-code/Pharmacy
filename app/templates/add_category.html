@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Добавить категорию{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <h1>Добавить новую категорию</h1>
+        
+        <form method="POST" action="/add_category" style="max-width: 600px; margin-top: 1.5rem;">
+            <div class="form-group">
+                <label for="name">Название категории:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Описание:</label>
+                <textarea id="description" name="description" rows="3"></textarea>
+            </div>
+            
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                <button type="submit" class="btn btn-success">💾 Сохранить категорию</button>
+                <a href="/categories" class="btn">Отмена</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}
